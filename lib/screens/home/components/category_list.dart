@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:netflix_clone/data/category.dart';
 
 import '../../../constants.dart';
+import 'category_item.dart';
 
 class CategoryList extends StatefulWidget {
   @override
@@ -12,6 +13,16 @@ class CategoryList extends StatefulWidget {
 class _CategoryListState extends State<CategoryList> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      height: size.height / 9,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: category.length,
+        itemBuilder: (context, index) {
+          return categoryItem(index, context);
+        },
+      ),
+    );
   }
 }

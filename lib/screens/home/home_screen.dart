@@ -23,8 +23,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
+    return Container(
+      // resizeToAvoidBottomInset: false,
+      child: Stack(
         children: [
           Positioned(
               top: 0, left: 0, right: 0, bottom: 0, child: backgroundCover()),
@@ -60,12 +61,11 @@ class _HomeScreenState extends State<HomeScreen> {
         builder: (context, snapshot) {
           Size size = MediaQuery.of(context).size;
           return SizedBox(
-            height: size.height,
-            width: size.width,
-            child: CachedNetworkImage(
-              imageUrl: posterUrl +
-                  snapshot.data!.results![_current].posterPath.toString(),
-              fit: BoxFit.fill,
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: Image.asset(
+              'assets/images/cover.jpg',
+              fit: BoxFit.cover,
               color: Colors.black.withOpacity(0.7),
               colorBlendMode: BlendMode.darken,
             ),

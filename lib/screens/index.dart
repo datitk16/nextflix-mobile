@@ -21,8 +21,10 @@ class _IndexState extends State<Index> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: screens[_selectedIndex],
+      extendBody: true,
       bottomNavigationBar: BottomNavigationBar(
-        elevation: 0,
+        backgroundColor: kBackgroundColor.withOpacity(0.1),
+        elevation: 0.0,
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(

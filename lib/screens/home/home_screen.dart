@@ -61,8 +61,8 @@ class _HomeScreenState extends State<HomeScreen> {
         builder: (context, snapshot) {
           Size size = MediaQuery.of(context).size;
           return SizedBox(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
+            height: size.height,
+            width: size.width,
             child: Image.asset(
               'assets/images/cover.jpg',
               fit: BoxFit.cover,
